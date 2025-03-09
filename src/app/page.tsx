@@ -1,18 +1,26 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-primary text-primary-foreground shadow-md">
-        <div className="container mx-auto py-4 px-6 flex justify-between items-center">
-          <h1 className="text-xl font-bold">Insulight</h1>
+      <header className="bg-pine-green-800 text-beige-100 shadow-md">
+        <div className="mx-auto px-10 py-2 flex justify-between items-center">
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/insulight.svg" 
+              alt="Insulight Logo" 
+              height={55} 
+              width={130} 
+              priority 
+            />
+          </Link>
           <nav className="space-x-4">
-            <Link href="/login">
-              <Button variant="outline" className="bg-beige-200 hover:bg-beige-300 text-pine-green-700 border-pine-green-500">Log in</Button>
+            <Link href="/login" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-10 py-2 px-4 bg-beige-200 hover:bg-beige-300 text-pine-green-700 border-pine-green-500">
+              Log in
             </Link>
-            <Link href="/register">
-              <Button className="bg-pine-green-600 hover:bg-pine-green-700">Sign up</Button>
+            <Link href="/register" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-10 py-2 px-4 bg-pine-green-500 hover:bg-pine-green-600 text-white">
+              Sign up
             </Link>
           </nav>
         </div>
@@ -26,11 +34,11 @@ export default function Home() {
             powered by artificial intelligence.
           </p>
           <div className="flex justify-center gap-4">
-            <Link href="/register">
-              <Button size="lg" className="bg-pine-green-600 hover:bg-pine-green-700 text-beige-100">Get Started</Button>
+            <Link href="/register" className="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-11 px-8 rounded-md bg-pine-green-600 hover:bg-pine-green-700 text-beige-100">
+              Get Started
             </Link>
-            <Link href="/about">
-              <Button variant="outline" size="lg" className="border-pine-green-500 text-pine-green-700 hover:bg-beige-100">Learn More</Button>
+            <Link href="/about" className="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-11 px-8 rounded-md border border-input hover:bg-accent hover:text-accent-foreground border-pine-green-500 text-pine-green-700 hover:bg-beige-100">
+              Learn More
             </Link>
           </div>
         </section>

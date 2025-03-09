@@ -9,32 +9,6 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      glucose_readings: {
-        Row: {
-          id: string
-          created_at: string
-          user_id: string
-          glucose_level: number
-          timestamp: string
-          notes?: string
-        }
-        Insert: {
-          id?: string
-          created_at?: string
-          user_id: string
-          glucose_level: number
-          timestamp: string
-          notes?: string
-        }
-        Update: {
-          id?: string
-          created_at?: string
-          user_id?: string
-          glucose_level?: number
-          timestamp?: string
-          notes?: string
-        }
-      }
       user_profiles: {
         Row: {
           id: string
@@ -59,6 +33,35 @@ export interface Database {
           name?: string
           target_range_min?: number
           target_range_max?: number
+        }
+      }
+      ai_insights: {
+        Row: {
+          id: string
+          created_at: string
+          user_id: string
+          insights: string
+          data_timeframe_start: string
+          data_timeframe_end: string
+          title: string
+        }
+        Insert: {
+          id?: string
+          created_at?: string
+          user_id: string
+          insights: string
+          data_timeframe_start: string
+          data_timeframe_end: string
+          title: string
+        }
+        Update: {
+          id?: string
+          created_at?: string
+          user_id?: string
+          insights?: string
+          data_timeframe_start?: string
+          data_timeframe_end?: string
+          title?: string
         }
       }
     }
